@@ -12,6 +12,7 @@ export const Home = () => {
     const fetchRecipes = async () => {
       try {
         const response = await axios.get("https://backend-recipe-share.onrender.com/recipes");
+        console.log(response.data); // Log the API response
         setRecipes(response.data);
       } catch (err) {
         console.log(err);
@@ -19,10 +20,12 @@ export const Home = () => {
     };
 
     const fetchSavedRecipes = async () => {
+        console.log("Fetching saved recipes..."); // Log before fetching saved recipes
       try {
         const response = await axios.get(
           `https://backend-recipe-share.onrender.com/recipes/savedRecipes/ids/${userID}`
         );
+        console.log(response.data.savedRecipes); // Log the saved recipes
         setSavedRecipes(response.data.savedRecipes);
       } catch (err) {
         console.log(err);
