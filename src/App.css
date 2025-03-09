@@ -10,7 +10,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: url('./background.jpg'); /* Updated to use the background image */
+  background-image: url('./best-background.jpg'); /* Updated to use the background image */
   background-size: cover; /* Ensures the image covers the entire background */
   background-position: center; /* Centers the background image */
 }
