@@ -11,7 +11,7 @@ export const Home = () => {
   useEffect(() => {
     const fetchRecipes = async () => {
       try {
-        const response = await axios.get("https://backend-recipe-share.onrender.com/recipes");
+        const response = await axios.get("https://recipe-server-1-ae6h.onrender.com/recipes");
         console.log(response.data); // Log the API response
         setRecipes(response.data);
       } catch (err) {
@@ -23,7 +23,7 @@ export const Home = () => {
         console.log("Fetching saved recipes..."); // Log before fetching saved recipes
       try {
         const response = await axios.get(
-          `https://backend-recipe-share.onrender.com/recipes/savedRecipes/ids/${userID}`
+          `https://recipe-server-1-ae6h.onrender.com/recipes/savedRecipes/ids/${userID}`
         );
         console.log(response.data.savedRecipes); // Log the saved recipes
         setSavedRecipes(response.data.savedRecipes);
@@ -38,7 +38,7 @@ export const Home = () => {
 
   const saveRecipe = async (recipeID) => {
     try {
-      const response = await axios.put("https://backend-recipe-share.onrender.com/recipes", {
+      const response = await axios.put("https://recipe-server-1-ae6h.onrender.com/recipes", {
         recipeID,
         userID,
       });
